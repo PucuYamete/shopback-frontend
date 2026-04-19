@@ -33,6 +33,52 @@ a {
   max-width: 1140px;
 }
 
+/* ===== NAVBAR ===== */
+
+.navbar {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 12px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar-banner {
+  width: 220px;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.navbar-menu a {
+  font-size: 15px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar-menu a:hover {
+  color: #4f46e5;
+}
+
 /* HERO */
 
 .hero {
@@ -388,6 +434,23 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .navbar-banner {
+    width: 180px;
+    max-width: 180px;
+  }
+
+  .navbar-menu {
+    gap: 14px;
+  }
+}
+
 @media (max-width: 640px) {
   .page {
     padding: 20px 14px 42px;
@@ -417,89 +480,5 @@ a {
   .info-card,
   .policy-card {
     padding: 18px;
-  }
-
-  .logo-img {
-    width: 44px;
-    height: 44px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(79, 70, 229, .18);
-  }
-
-  /* ===== NAVBAR ===== */
-
-  .navbar {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 18px 4px 20px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    text-decoration: none;
-    color: #111827;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1;
-  }
-
-  .logo-img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-    border-radius: 10px;
-    flex-shrink: 0;
-    display: block;
-  }
-
-  .navbar-menu {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-
-  .navbar-menu a {
-    text-decoration: none;
-    color: #475569;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 0.2s ease;
-  }
-
-  .navbar-menu a:hover {
-    color: #4f46e5;
-  }
-
-  /* MOBILE */
-
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-
-    .navbar-menu {
-      gap: 16px;
-    }
-
-    .navbar-logo {
-      font-size: 22px;
-    }
-
-    .logo-img {
-      width: 40px;
-      height: 40px;
-    }
   }
 }

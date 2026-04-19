@@ -39,11 +39,10 @@ export default function Home() {
                 <header className="navbar">
                     <a href="#top" className="navbar-logo">
                         <img
-                            src="/dealhay24h-logo.png"
-                            alt=""
-                            className="logo-img"
+                            src="/dealhay24h-banner.png"
+                            alt="DealHay24h"
+                            className="navbar-banner"
                         />
-                        <span className="brand-text">DealHay24h</span>
                     </a>
 
                     <nav className="navbar-menu">
