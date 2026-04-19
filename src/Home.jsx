@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_BASE = import.meta.env.VITE_API_BASE;
+const API_BASE = "https://shopback-backend2.onrender.com";
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -36,13 +36,28 @@ export default function Home() {
     return (
         <div className="page">
             <div className="content">
-                <header className="hero">
-                    <div className="hero-badge">Shopee deal chọn lọc</div>
-                    <h1>Khám phá sản phẩm đáng mua mỗi ngày</h1>
+                <header className="topbar">
+                    <a href="#top" className="brand">
+                        <span className="brand-dot"></span>
+                        <span>DealHay24h</span>
+                    </a>
+
+                    <nav className="nav">
+                        <a href="#san-pham">Sản phẩm</a>
+                        <a href="#gioi-thieu">Giới thiệu</a>
+                        <a href="#lien-he">Liên hệ</a>
+                    </nav>
+                </header>
+
+                <section className="hero" id="top">
+                    <div className="hero-badge">Deal hot mỗi ngày</div>
+
+                    <h1>DealHay24h - Khám phá sản phẩm đáng mua mỗi ngày</h1>
+
                     <p className="hero-text">
-                        Website tổng hợp các sản phẩm Shopee nổi bật, dễ mua, dễ tham khảo
-                        và phù hợp với nhu cầu quà tặng, decor, đồ dùng cá nhân và sản phẩm
-                        hot theo xu hướng.
+                        DealHay24h tổng hợp các sản phẩm nổi bật, ưu đãi hấp dẫn và món đồ
+                        đáng mua từ Shopee giúp bạn tiết kiệm thời gian lựa chọn, cập nhật
+                        xu hướng mua sắm và tiếp cận nhanh các deal đáng chú ý.
                     </p>
 
                     <div className="hero-actions">
@@ -53,20 +68,48 @@ export default function Home() {
                             Tìm hiểu thêm
                         </a>
                     </div>
-                </header>
+                </section>
 
                 <section className="feature-strip">
                     <div className="feature-item">
                         <h3>Chọn lọc dễ xem</h3>
-                        <p>Sản phẩm được gom theo hướng dễ mua, dễ chia sẻ và dễ tham khảo.</p>
+                        <p>
+                            Sản phẩm được tổng hợp theo hướng dễ mua, dễ tham khảo và phù hợp
+                            với nhu cầu thực tế hằng ngày.
+                        </p>
                     </div>
+
                     <div className="feature-item">
                         <h3>Đi thẳng sản phẩm</h3>
-                        <p>Chỉ cần bấm một lần để mở đúng liên kết sản phẩm trên Shopee.</p>
+                        <p>
+                            Chỉ cần một lần bấm để truy cập nhanh tới liên kết sản phẩm trên
+                            Shopee.
+                        </p>
                     </div>
+
                     <div className="feature-item">
-                        <h3>Gọn và rõ ràng</h3>
-                        <p>Ưu tiên trải nghiệm đơn giản, ít rối mắt và phù hợp trên điện thoại.</p>
+                        <h3>Đơn giản, rõ ràng</h3>
+                        <p>
+                            Ưu tiên giao diện gọn gàng, ít rối mắt và tối ưu cho cả máy tính
+                            lẫn điện thoại.
+                        </p>
+                    </div>
+                </section>
+
+                <section className="trust-strip">
+                    <div className="trust-box">
+                        <strong>Cập nhật deal mỗi ngày</strong>
+                        <span>Theo dõi các sản phẩm nổi bật và ưu đãi mới</span>
+                    </div>
+
+                    <div className="trust-box">
+                        <strong>Chọn lọc sản phẩm đáng chú ý</strong>
+                        <span>Tập trung vào các món đồ dễ mua và dễ quan tâm</span>
+                    </div>
+
+                    <div className="trust-box">
+                        <strong>Truy cập nhanh, không rườm rà</strong>
+                        <span>Giảm thời gian tìm kiếm, đi thẳng tới sản phẩm</span>
                     </div>
                 </section>
 
@@ -77,7 +120,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {loading && <p className="status-text">Đang tải sản phẩm...</p>}
+                {loading && <p className="status-text">Đang tải danh sách sản phẩm...</p>}
 
                 {error && <p className="error-text">{error}</p>}
 
@@ -99,21 +142,21 @@ export default function Home() {
                             <div className="product-info">
                                 <div className="product-meta">
                                     <span className="product-platform">{product.platform}</span>
-                                    <span className="product-tag">Deal gợi ý</span>
+                                    <span className="product-tag">HOT</span>
                                 </div>
 
                                 <h3>{product.title}</h3>
 
                                 <p className="product-desc">
-                                    Xem nhanh sản phẩm và chuyển tới trang mua trên Shopee chỉ với
-                                    một lần bấm.
+                                    Tham khảo nhanh sản phẩm và truy cập trực tiếp tới Shopee để
+                                    xem thông tin chi tiết.
                                 </p>
 
                                 <button
                                     className="download-btn"
                                     onClick={() => handleGoProduct(product.id)}
                                 >
-                                    Xem ngay trên Shopee
+                                    Xem deal ngay
                                 </button>
                             </div>
                         </article>
@@ -122,26 +165,29 @@ export default function Home() {
 
                 <section className="info-grid" id="gioi-thieu">
                     <article className="info-card">
-                        <h2>Về website</h2>
+                        <h2>Về DealHay24h</h2>
                         <p>
-                            Website được xây dựng để tổng hợp các sản phẩm Shopee đáng chú ý
-                            theo từng nhu cầu thực tế như quà tặng, decor, đồ dùng cá nhân và
-                            sản phẩm theo xu hướng.
+                            DealHay24h là website chuyên tổng hợp các sản phẩm đáng chú ý,
+                            deal tốt và xu hướng mua sắm nổi bật từ các sàn thương mại điện tử.
+                        </p>
+                        <p>
+                            Chúng tôi giúp người dùng dễ dàng khám phá sản phẩm phù hợp, tiết
+                            kiệm thời gian tìm kiếm và cập nhật ưu đãi mới mỗi ngày.
                         </p>
                     </article>
 
-                    <article className="info-card">
+                    <article className="info-card" id="lien-he">
                         <h2>Liên hệ</h2>
                         <p>Email: huy12pk@gmail.com</p>
-                        <p>Thời gian phản hồi: trong giờ hành chính</p>
+                        <p>Thời gian phản hồi: 24 giờ làm việc</p>
                     </article>
 
                     <article className="info-card">
-                        <h2>Chính sách minh bạch</h2>
+                        <h2>Minh bạch nội dung</h2>
                         <p>
                             Một số liên kết trên website có thể là liên kết tiếp thị liên kết.
-                            Giá, chương trình ưu đãi và tình trạng sản phẩm có thể thay đổi
-                            theo từng thời điểm trên Shopee.
+                            Giá bán, ưu đãi và tình trạng sản phẩm có thể thay đổi theo thời
+                            điểm trên Shopee.
                         </p>
                     </article>
                 </section>
@@ -151,8 +197,8 @@ export default function Home() {
                         <h2>Chính sách bảo mật</h2>
                         <p>
                             Website không yêu cầu người dùng tạo tài khoản để xem sản phẩm.
-                            Dữ liệu truy cập cơ bản có thể được dùng để cải thiện trải nghiệm,
-                            đo lường lượt nhấp và tối ưu nội dung hiển thị.
+                            Một số dữ liệu truy cập cơ bản có thể được sử dụng để cải thiện
+                            trải nghiệm, thống kê lượt nhấp và tối ưu nội dung hiển thị.
                         </p>
                     </div>
 
@@ -160,24 +206,31 @@ export default function Home() {
                         <h2>Điều khoản sử dụng</h2>
                         <p>
                             Nội dung trên website mang tính chất tham khảo. Người dùng nên tự
-                            kiểm tra lại thông tin sản phẩm, giá bán, phí vận chuyển và chính
+                            kiểm tra lại giá bán, phí vận chuyển, đánh giá sản phẩm và chính
                             sách đổi trả trên Shopee trước khi quyết định mua hàng.
                         </p>
                     </div>
                 </section>
 
                 <footer className="site-footer">
-                    <div>
-                        <strong>Deal chọn lọc Shopee</strong>
-                        <p>Trang giới thiệu sản phẩm đáng chú ý và dễ tham khảo mỗi ngày.</p>
+                    <div className="footer-brand">
+                        <strong>DealHay24h</strong>
+                        <p>
+                            Website tổng hợp deal và sản phẩm nổi bật, giúp người dùng khám phá
+                            nhanh những món đồ đáng mua mỗi ngày.
+                        </p>
                     </div>
 
                     <div className="footer-links">
                         <a href="#san-pham">Sản phẩm</a>
                         <a href="#gioi-thieu">Giới thiệu</a>
-                        <a href="mailto:contact@example.com">Liên hệ</a>
+                        <a href="#lien-he">Liên hệ</a>
                     </div>
                 </footer>
+
+                <div className="copyright">
+                    © 2026 DealHay24h. All rights reserved.
+                </div>
             </div>
         </div>
     );
