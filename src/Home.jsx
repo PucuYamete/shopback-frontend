@@ -36,20 +36,21 @@ export default function Home() {
     return (
         <div className="page">
             <div className="content">
-                <header className="topbar">
-                    <a href="#top" className="brand">
+                <header className="navbar">
+                    <a href="#top" className="navbar-logo">
                         <img
                             src="/dealhay24h-logo.png"
                             alt=""
                             className="logo-img"
                         />
-                        <span>DealHay24h</span>
+                        <span className="brand-text">DealHay24h</span>
                     </a>
 
-                    <nav className="nav">
+                    <nav className="navbar-menu">
                         <a href="#san-pham">Sản phẩm</a>
                         <a href="#gioi-thieu">Giới thiệu</a>
                         <a href="#lien-he">Liên hệ</a>
+                        <a href="#san-pham">Deal hot</a>
                     </nav>
                 </header>
 
