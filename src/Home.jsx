@@ -38,7 +38,7 @@ export default function Home() {
             <div className="content">
                 <header className="topbar">
                     <a href="#top" className="brand">
-                        <span className="brand-dot"></span>
+                        <img src="/logo.png" alt="DealHay24h Logo" className="logo-img" />
                         <span>DealHay24h</span>
                     </a>
 
