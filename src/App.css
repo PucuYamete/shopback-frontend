@@ -427,13 +427,60 @@ a {
     box-shadow: 0 6px 18px rgba(79, 70, 229, .18);
   }
 
-  .brand {
+  .topbar {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 12px 0 24px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     text-decoration: none;
-    font-weight: 800;
-    font-size: 24px;
     color: #111827;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .brand img,
+  .logo-img {
+    width: 44px !important;
+    height: 44px !important;
+    max-width: 44px !important;
+    max-height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    object-fit: contain !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+    border-radius: 10px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .topbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav {
+      gap: 16px;
+    }
   }
 }

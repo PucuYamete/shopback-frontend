@@ -40,7 +40,7 @@ export default function Home() {
                     <a href="#top" className="brand">
                         <img
                             src="/dealhay24h-logo.png"
-                            alt="DealHay24h Logo"
+                            alt=""
                             className="logo-img"
                         />
                         <span>DealHay24h</span>
