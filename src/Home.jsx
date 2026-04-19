@@ -38,7 +38,11 @@ export default function Home() {
             <div className="content">
                 <header className="topbar">
                     <a href="#top" className="brand">
-                        <img src="/vite.svg" className="logo-img" />
+                        <img
+                            src="/dealhay24h-logo.png"
+                            alt="DealHay24h Logo"
+                            className="logo-img"
+                        />
                         <span>DealHay24h</span>
                     </a>
 
