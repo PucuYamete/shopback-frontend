@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = import.meta.env.VITE_API_BASE;
 
 export default function Home() {
     const [products, setProducts] = useState([]);
@@ -132,7 +132,7 @@ export default function Home() {
 
                     <article className="info-card">
                         <h2>Liên hệ</h2>
-                        <p>Email: contact@example.com</p>
+                        <p>Email: huy12pk@gmail.com</p>
                         <p>Thời gian phản hồi: trong giờ hành chính</p>
                     </article>
 
