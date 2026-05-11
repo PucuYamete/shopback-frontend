@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const API_BASE = "https://shopback-backend2.onrender.com";
 
@@ -6,7 +6,7 @@ export default function Home() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-
+    const [selectedCategory, setSelectedCategory] = useState("Tất cả");
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -32,7 +32,14 @@ export default function Home() {
     const handleGoProduct = (id) => {
         window.location.href = `${API_BASE}/go?id=${id}`;
     };
+    const categories = useMemo(() => {
+        return ["Tất cả", ...new Set(products.map((item) => item.category).filter(Boolean))];
+    }, [products]);
 
+    const filteredProducts = useMemo(() => {
+        if (selectedCategory === "Tất cả") return products;
+        return products.filter((item) => item.category === selectedCategory);
+    }, [products, selectedCategory]);
     return (
         <div className="page">
             <div className="content">
@@ -179,49 +186,76 @@ export default function Home() {
                         <h2>Gợi ý đáng chú ý hôm nay</h2>
                     </div>
                 </section>
-
-                {loading && <p className="status-text">Đang tải danh sách sản phẩm...</p>}
+                <div className="filter-tabs">
+                    {categories.map((category) => (
+                        <button
+                            key={category}
+                            className={selectedCategory === category ? "filter-tab active" : "filter-tab"}
+                            onClick={() => setSelectedCategory(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+                {loading && (
+                    <section className="product-grid">
+                        {[...Array(6)].map((_, index) => (
+                            <div key={index} className="skeleton-card">
+                                <div className="skeleton-image"></div>
+                                <div className="skeleton-content">
+                                    <div className="skeleton-line short"></div>
+                                    <div className="skeleton-line"></div>
+                                    <div className="skeleton-line"></div>
+                                    <div className="skeleton-btn"></div>
+                                </div>
+                            </div>
+                        ))}
+                    </section>
+                )}
 
                 {error && <p className="error-text">{error}</p>}
 
                 {!loading && !error && products.length === 0 && (
                     <p className="status-text">Chưa có sản phẩm nào.</p>
                 )}
-
-                <section className="product-grid">
-                    {products.map((product) => (
-                        <article key={product.id} className="product-card">
-                            <div className="product-image">
-                                {product.image ? (
-                                    <img src={product.image} alt={product.title} />
-                                ) : (
-                                    <div className="image-placeholder">Chưa có ảnh sản phẩm</div>
-                                )}
-                            </div>
-
-                            <div className="product-info">
-                                <div className="product-meta">
-                                    <span className="product-platform">{product.platform}</span>
-                                    <span className="product-tag">🔥 HOT</span>
+                {!loading && !error && (
+                    <section className="product-grid">
+                        {filteredProducts.map((product) => (
+                            <article key={product.id} className="product-card">
+                                <div className="product-image">
+                                    {product.image ? (
+                                        <img src={product.image} alt={product.title} />
+                                    ) : (
+                                        <div className="image-placeholder">Chưa có ảnh sản phẩm</div>
+                                    )}
                                 </div>
 
-                                <h3>{product.title}</h3>
+                                <div className="product-info">
+                                    <div className="product-meta">
+                                        <span className="product-platform">{product.platform}</span>
+                                        <span className="product-tag">
+                                            {product.category || "HOT"}
+                                        </span>
+                                    </div>
 
-                                <p className="product-desc">
-                                    Tham khảo nhanh sản phẩm và truy cập trực tiếp tới Shopee để
-                                    xem thông tin chi tiết.
-                                </p>
+                                    <h3>{product.title}</h3>
 
-                                <button
-                                    className="download-btn"
-                                    onClick={() => handleGoProduct(product.id)}
-                                >
-                                    Xem deal Shopee →
-                                </button>
-                            </div>
-                        </article>
-                    ))}
-                </section>
+                                    <p className="product-desc">
+                                        Tham khảo nhanh sản phẩm và truy cập trực tiếp tới Shopee để
+                                        xem thông tin chi tiết.
+                                    </p>
+
+                                    <button
+                                        className="download-btn"
+                                        onClick={() => handleGoProduct(product.id)}
+                                    >
+                                        Xem deal Shopee →
+                                    </button>
+                                </div>
+                            </article>
+                        ))}
+                    </section>
+                )}
 
                 <section className="info-grid" id="gioi-thieu">
                     <article className="info-card">

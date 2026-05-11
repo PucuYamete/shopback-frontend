@@ -676,3 +676,79 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 22px;
+}
+
+.filter-tab {
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: white;
+  color: #475569;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-tab:hover,
+.filter-tab.active {
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.18);
+}
+
+.skeleton-card {
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  animation: pulse 1.4s infinite ease-in-out;
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 240px;
+  background: #e2e8f0;
+}
+
+.skeleton-content {
+  padding: 18px;
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  margin-bottom: 12px;
+}
+
+.skeleton-line.short {
+  width: 45%;
+}
+
+.skeleton-btn {
+  width: 100%;
+  height: 44px;
+  border-radius: 14px;
+  background: #dbeafe;
+  margin-top: 20px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.92;
+  }
+
+  50% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 0.92;
+  }
+}
