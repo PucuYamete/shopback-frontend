@@ -277,7 +277,7 @@ export default function Home() {
 
                     <article className="info-card" id="lien-he">
                         <h2>Liên hệ</h2>
-                        <p>Email: huy12pk@gmail.com</p>
+                        <p>Email: masoffer.admin.web@gmail.com</p>
                         <p>Thời gian phản hồi: 24 giờ làm việc</p>
                     </article>
 
