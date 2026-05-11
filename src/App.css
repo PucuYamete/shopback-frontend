@@ -341,7 +341,7 @@ a {
   padding: 18px;
 }
 
-.product-meta {
+.product-tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -750,5 +750,156 @@ a {
 
   100% {
     opacity: 0.92;
+  }
+}
+
+.hot-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 14px 12px 36px;
+  }
+
+  .navbar {
+    top: 8px;
+    margin-bottom: 18px;
+  }
+
+  .navbar-banner {
+    width: 155px;
+    max-width: 155px;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .navbar-menu a {
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+    padding: 9px 8px;
+  }
+
+  .hero {
+    padding: 18px 0 16px;
+    text-align: left;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.18;
+  }
+
+  .hero h1 br {
+    display: none;
+  }
+
+  .hero-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .section-head {
+    align-items: flex-start;
+  }
+
+  .section-head h2 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    padding: 18px;
+  }
+
+  .filter-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-left: -2px;
+    scrollbar-width: none;
+  }
+
+  .filter-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .product-card {
+    border-radius: 20px;
+  }
+
+  .product-image {
+    height: 230px;
+  }
+
+  .product-info {
+    padding: 16px;
+  }
+
+  .product-info h3 {
+    font-size: 18px;
+    min-height: auto;
+  }
+
+  .product-desc {
+    font-size: 14px;
+  }
+
+  .download-btn {
+    padding: 14px 18px;
+  }
+
+  .site-footer {
+    margin-top: 24px;
+  }
+
+  .copyright {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 12px;
   }
 }

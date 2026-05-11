@@ -163,7 +163,7 @@ export default function Home() {
 
                         <a href="#san-pham" className="category-card">
                             <span>🏠</span>
-                            <strong>Đồ gia dụng</strong>
+                            <strong>Gia dụng</strong>
                             <p>Vật dụng hằng ngày giúp nhà cửa gọn gàng và tiện lợi hơn.</p>
                         </a>
 
@@ -233,9 +233,15 @@ export default function Home() {
                                 <div className="product-info">
                                     <div className="product-meta">
                                         <span className="product-platform">{product.platform}</span>
-                                        <span className="product-tag">
-                                            {product.category || "HOT"}
-                                        </span>
+                                        <div className="product-tags">
+                                            <span className="product-platform">{product.platform}</span>
+
+                                            <span className="product-tag">
+                                                {product.category || "HOT"}
+                                            </span>
+
+                                            <span className="hot-badge">🔥 HOT</span>
+                                        </div>
                                     </div>
 
                                     <h3>{product.title}</h3>
