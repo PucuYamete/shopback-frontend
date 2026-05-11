@@ -232,7 +232,6 @@ export default function Home() {
 
                                 <div className="product-info">
                                     <div className="product-meta">
-                                        <span className="product-platform">{product.platform}</span>
                                         <div className="product-tags">
                                             <span className="product-platform">{product.platform}</span>
 
