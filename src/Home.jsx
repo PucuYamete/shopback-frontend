@@ -49,28 +49,51 @@ export default function Home() {
                         <a href="#san-pham">Sản phẩm</a>
                         <a href="#gioi-thieu">Giới thiệu</a>
                         <a href="#lien-he">Liên hệ</a>
-                        <a href="#san-pham">Deal hot</a>
+                        <a href="#san-pham" className="nav-cta">Xem deal hot</a>
                     </nav>
                 </header>
 
                 <section className="hero" id="top">
-                    <div className="hero-badge">Deal hot mỗi ngày</div>
+                    <div className="hero-badge">
+                        🔥 Deal hot cập nhật mỗi ngày
+                    </div>
 
-                    <h1>DealHay24h - Khám phá sản phẩm đáng mua mỗi ngày</h1>
+                    <h1>
+                        Săn deal Shopee giá tốt <br />
+                        nhanh hơn cùng DealHay24h
+                    </h1>
 
                     <p className="hero-text">
-                        DealHay24h tổng hợp các sản phẩm nổi bật, ưu đãi hấp dẫn và món đồ
-                        đáng mua từ Shopee giúp bạn tiết kiệm thời gian lựa chọn, cập nhật
-                        xu hướng mua sắm và tiếp cận nhanh các deal đáng chú ý.
+                        Tổng hợp sản phẩm nổi bật, deal đáng chú ý và xu hướng mua sắm
+                        từ Shopee giúp bạn tiết kiệm thời gian tìm kiếm và tiếp cận nhanh
+                        các ưu đãi hấp dẫn mỗi ngày.
                     </p>
 
                     <div className="hero-actions">
                         <a href="#san-pham" className="primary-btn">
-                            Xem sản phẩm
+                            Xem deal hôm nay
                         </a>
+
                         <a href="#gioi-thieu" className="secondary-btn">
-                            Tìm hiểu thêm
+                            Giới thiệu website
                         </a>
+                    </div>
+
+                    <div className="hero-stats">
+                        <div className="hero-stat">
+                            <strong>Deal nổi bật</strong>
+                            <span>Cập nhật thường xuyên</span>
+                        </div>
+
+                        <div className="hero-stat">
+                            <strong>Sản phẩm đa dạng</strong>
+                            <span>Decor • Công nghệ • Gia dụng</span>
+                        </div>
+
+                        <div className="hero-stat">
+                            <strong>Truy cập nhanh</strong>
+                            <span>Đi thẳng tới Shopee</span>
+                        </div>
                     </div>
                 </section>
 
@@ -116,7 +139,40 @@ export default function Home() {
                         <span>Giảm thời gian tìm kiếm, đi thẳng tới sản phẩm</span>
                     </div>
                 </section>
+                <section className="category-section">
+                    <div className="section-head">
+                        <div>
+                            <span className="section-kicker">Danh mục nổi bật</span>
+                            <h2>Khám phá deal theo nhu cầu</h2>
+                        </div>
+                    </div>
 
+                    <div className="category-grid">
+                        <a href="#san-pham" className="category-card">
+                            <span>💻</span>
+                            <strong>Công nghệ</strong>
+                            <p>Phụ kiện, đồ dùng tiện ích và sản phẩm số đáng chú ý.</p>
+                        </a>
+
+                        <a href="#san-pham" className="category-card">
+                            <span>🏠</span>
+                            <strong>Đồ gia dụng</strong>
+                            <p>Vật dụng hằng ngày giúp nhà cửa gọn gàng và tiện lợi hơn.</p>
+                        </a>
+
+                        <a href="#san-pham" className="category-card">
+                            <span>✨</span>
+                            <strong>Decor</strong>
+                            <p>Đồ trang trí, góc làm việc và sản phẩm làm đẹp không gian.</p>
+                        </a>
+
+                        <a href="#san-pham" className="category-card">
+                            <span>🎁</span>
+                            <strong>Quà tặng</strong>
+                            <p>Gợi ý sản phẩm dễ mua, phù hợp làm quà cho nhiều dịp.</p>
+                        </a>
+                    </div>
+                </section>
                 <section className="section-head" id="san-pham">
                     <div>
                         <span className="section-kicker">Sản phẩm nổi bật</span>
@@ -146,7 +202,7 @@ export default function Home() {
                             <div className="product-info">
                                 <div className="product-meta">
                                     <span className="product-platform">{product.platform}</span>
-                                    <span className="product-tag">HOT</span>
+                                    <span className="product-tag">🔥 HOT</span>
                                 </div>
 
                                 <h3>{product.title}</h3>
@@ -160,7 +216,7 @@ export default function Home() {
                                     className="download-btn"
                                     onClick={() => handleGoProduct(product.id)}
                                 >
-                                    Xem deal ngay
+                                    Xem deal Shopee →
                                 </button>
                             </div>
                         </article>
@@ -200,8 +256,8 @@ export default function Home() {
                     <div className="policy-card">
                         <h2>Chính sách bảo mật</h2>
                         <p>
-                            Website không yêu cầu người dùng tạo tài khoản để xem sản phẩm.
-                            Một số dữ liệu truy cập cơ bản có thể được sử dụng để cải thiện
+                            DealHay24h không yêu cầu người dùng tạo tài khoản để xem sản phẩm.
+                            Website có thể ghi nhận một số dữ liệu truy cập cơ bản nhằm cải thiện
                             trải nghiệm, thống kê lượt nhấp và tối ưu nội dung hiển thị.
                         </p>
                     </div>
@@ -209,9 +265,18 @@ export default function Home() {
                     <div className="policy-card">
                         <h2>Điều khoản sử dụng</h2>
                         <p>
-                            Nội dung trên website mang tính chất tham khảo. Người dùng nên tự
-                            kiểm tra lại giá bán, phí vận chuyển, đánh giá sản phẩm và chính
-                            sách đổi trả trên Shopee trước khi quyết định mua hàng.
+                            Nội dung trên DealHay24h mang tính chất tham khảo. Người dùng nên kiểm
+                            tra lại giá bán, phí vận chuyển, đánh giá sản phẩm và chính sách đổi trả
+                            trực tiếp trên Shopee trước khi mua hàng.
+                        </p>
+                    </div>
+
+                    <div className="policy-card">
+                        <h2>Minh bạch affiliate</h2>
+                        <p>
+                            Một số liên kết trên website có thể là liên kết tiếp thị liên kết.
+                            Khi người dùng mua hàng thông qua các liên kết này, DealHay24h có thể
+                            nhận hoa hồng mà không làm thay đổi giá mua của người dùng.
                         </p>
                     </div>
                 </section>
