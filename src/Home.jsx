@@ -324,8 +324,7 @@ export default function Home() {
                                     <h3>{product.title}</h3>
 
                                     <p className="product-desc">
-                                        Tham khảo nhanh sản phẩm và truy cập trực tiếp tới Shopee để
-                                        xem thông tin chi tiết.
+                                        {product.description || "Sản phẩm đáng chú ý, truy cập Shopee để xem chi tiết."}
                                     </p>
 
                                     <button
