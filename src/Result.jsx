@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./App.css";
 
-const BACKEND_URL = "https://shopback-backend.onrender.com";
+const BACKEND_URL = "https://shopback-backend2.onrender.com";
 
 export default function Result() {
     const location = useLocation();
@@ -65,9 +65,9 @@ export default function Result() {
     return (
         <div className="page">
             <div className="content">
-                <h1>Hoàn trả tiền về tay</h1>
+                <h1>Link Shopee đã sẵn sàng</h1>
                 <p style={{ opacity: 0.7 }}>
-                    Link hoàn tiền đã sẵn sàng
+                    DealHay24h đang chuyển bạn tới Shopee qua liên kết ưu đãi phù hợp.
                 </p>
 
                 <div className="input-wrapper">
@@ -111,7 +111,7 @@ export default function Result() {
                 </p>
 
                 <p style={{ marginTop: 12 }}>
-                    ⏳ Tự động chuyển sau{" "}
+                    ⏳ Tự động mở Shopee sau{" "}
                     <strong>{countdown}</strong> giây
                 </p>
 
@@ -120,7 +120,7 @@ export default function Result() {
                     style={{ marginTop: 20 }}
                     onClick={() => (window.location.href = redirectLink)}
                 >
-                    Mở Shopee ngay
+                    Đi tới Shopee ngay
                 </button>
             </div>
         </div>

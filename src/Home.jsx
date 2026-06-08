@@ -1,12 +1,43 @@
 import { useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const API_BASE = "https://shopback-backend2.onrender.com";
 
 export default function Home() {
+    const navigate = useNavigate();
+
+    const [productUrl, setProductUrl] = useState("");
+    const [linkError, setLinkError] = useState("");
+
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("Tất cả");
+    const handleSubmitLink = (e) => {
+        e.preventDefault();
+
+        const url = productUrl.trim();
+
+        if (!url) {
+            setLinkError("Vui lòng dán link sản phẩm Shopee.");
+            return;
+        }
+
+        if (!url.includes("shopee.vn") && !url.includes("s.shopee.vn")) {
+            setLinkError("Link không hợp lệ. Vui lòng dán link Shopee.");
+            return;
+        }
+
+        setLinkError("");
+
+        sessionStorage.setItem("productUrl", url);
+
+        navigate("/ket-qua", {
+            state: {
+                productUrl: url,
+            },
+        });
+    };
     useEffect(() => {
         const fetchProducts = async () => {
             try {
@@ -59,6 +90,53 @@ export default function Home() {
                         <a href="#san-pham" className="nav-cta">Xem deal hot</a>
                     </nav>
                 </header>
+                <section className="link-converter-section">
+                    <div className="link-converter-box">
+                        <div className="link-converter-badge">
+                            ⚡ Công cụ chuyển link Shopee
+                        </div>
+
+                        <h2>Tìm nhanh deal Shopee từ link sản phẩm</h2>
+
+                        <p>
+                            Dán link sản phẩm Shopee bạn muốn mua, DealHay24h sẽ chuyển bạn tới liên kết ưu đãi phù hợp.
+                        </p>
+
+                        <form className="link-converter-form" onSubmit={handleSubmitLink}>
+                            <div className="link-input-wrap">
+                                <span className="link-input-icon">🔗</span>
+
+                                <input
+                                    type="url"
+                                    value={productUrl}
+                                    onChange={(e) => setProductUrl(e.target.value)}
+                                    placeholder="Dán link sản phẩm Shopee vào đây..."
+                                />
+                            </div>
+
+                            <button type="submit">
+                                Tìm deal
+                                <span>→</span>
+                            </button>
+                        </form>
+
+                        {linkError && (
+                            <div className="link-converter-error">
+                                {linkError}
+                            </div>
+                        )}
+
+                        <div className="link-converter-benefits">
+                            <span>✓ Không cần đăng nhập</span>
+                            <span>✓ Chuyển nhanh tới Shopee</span>
+                            <span>✓ Giá mua không thay đổi</span>
+                        </div>
+
+                        <div className="link-converter-note">
+                            DealHay24h có thể nhận hoa hồng khi bạn mua hàng qua liên kết tiếp thị liên kết.
+                        </div>
+                    </div>
+                </section>
 
                 <section className="hero" id="top">
                     <div className="hero-badge">
