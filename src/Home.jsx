@@ -113,49 +113,67 @@ export default function Home() {
                         </a>
                     </nav>
                 </header>
-                <section className="link-converter-section">
-                    <div className="link-converter-box">
-                        <div className="link-converter-badge">
+                <section className="mb-9 mt-3">
+                    <div className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/90 px-7 py-8 text-center shadow-2xl shadow-slate-200/70 backdrop-blur-md max-sm:rounded-3xl max-sm:px-4 max-sm:py-6 max-sm:text-left">
+                        <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-indigo-500/10 blur-sm"></div>
+                        <div className="pointer-events-none absolute inset-x-7 bottom-0 h-px bg-gradient-to-r from-transparent via-indigo-400/50 to-transparent"></div>
+
+                        <div className="relative z-10 mb-4 inline-flex items-center gap-2 rounded-full border border-indigo-500/10 bg-indigo-50 px-4 py-2 text-xs font-black text-indigo-700">
                             ⚡ Công cụ chuyển link Shopee
                         </div>
 
-                        <h2>Tìm nhanh deal Shopee từ link sản phẩm</h2>
+                        <h2 className="relative z-10 mx-auto mb-3 max-w-3xl text-3xl font-black leading-tight tracking-tight text-slate-900 max-sm:text-2xl">
+                            Tìm nhanh deal Shopee từ link sản phẩm
+                        </h2>
 
-                        <p>
+                        <p className="relative z-10 mx-auto mb-6 max-w-2xl text-[15.5px] leading-7 text-slate-500 max-sm:text-sm">
                             Dán link sản phẩm Shopee bạn muốn mua, DealHay24h sẽ chuyển bạn tới liên kết ưu đãi phù hợp.
                         </p>
 
-                        <form className="link-converter-form" onSubmit={handleSubmitLink}>
-                            <div className="link-input-wrap">
-                                <span className="link-input-icon">🔗</span>
+                        <form
+                            className="relative z-10 mx-auto flex max-w-4xl items-stretch gap-2 rounded-[22px] border border-slate-300/80 bg-white/80 p-2 shadow-xl shadow-slate-200/70 backdrop-blur-md max-sm:flex-col"
+                            onSubmit={handleSubmitLink}
+                        >
+                            <div className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4">
+                                <span className="text-lg opacity-75">🔗</span>
 
                                 <input
                                     type="url"
                                     value={productUrl}
                                     onChange={(e) => setProductUrl(e.target.value)}
                                     placeholder="Dán link sản phẩm Shopee vào đây..."
+                                    className="min-w-0 flex-1 bg-transparent py-5 text-base text-slate-900 outline-none placeholder:text-slate-400 max-sm:py-4 max-sm:text-sm"
                                 />
                             </div>
 
-                            <button type="submit">
+                            <button
+                                type="submit"
+                                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 px-8 text-base font-black text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-0.5 hover:opacity-95 max-sm:min-h-[50px] max-sm:w-full max-sm:px-4 max-sm:py-3 max-sm:text-sm"
+                            >
                                 Tìm deal
-                                <span>→</span>
+                                <span className="text-lg">→</span>
                             </button>
                         </form>
 
                         {linkError && (
-                            <div className="link-converter-error">
+                            <div className="relative z-10 mx-auto mt-3 max-w-4xl rounded-2xl bg-red-50 px-4 py-3 text-sm font-bold text-red-600">
                                 {linkError}
                             </div>
                         )}
 
-                        <div className="link-converter-benefits">
-                            <span>✓ Không cần đăng nhập</span>
-                            <span>✓ Chuyển nhanh tới Shopee</span>
-                            <span>✓ Giá mua không thay đổi</span>
+                        <div className="relative z-10 mt-4 flex flex-wrap justify-center gap-2 max-sm:justify-start">
+                            <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-bold text-slate-600">
+                                ✓ Không cần đăng nhập
+                            </span>
+                            <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-bold text-slate-600">
+                                ✓ Chuyển nhanh tới Shopee
+                            </span>
+                            <span className="rounded-full border border-slate-200 bg-white/80 px-3 py-2 text-xs font-bold text-slate-600">
+                                ✓ Giá mua không thay đổi
+                            </span>
                         </div>
 
-                        <div className="link-converter-note">
+                        <div className="relative z-10 mt-3 text-xs leading-6 text-slate-500">
                             DealHay24h có thể nhận hoa hồng khi bạn mua hàng qua liên kết tiếp thị liên kết.
                         </div>
                     </div>
