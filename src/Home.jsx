@@ -317,7 +317,17 @@ export default function Home() {
                                                 {product.category || "HOT"}
                                             </span>
 
-                                            <span className="hot-badge">🔥 HOT</span>
+                                            {product.badge && (
+                                                <span className="hot-badge">
+                                                    🔥 {product.badge}
+                                                </span>
+                                            )}
+
+                                            {product.priceLabel && (
+                                                <span className="price-badge">
+                                                    {product.priceLabel}
+                                                </span>
+                                            )}
                                         </div>
                                     </div>
 
