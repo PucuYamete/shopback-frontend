@@ -74,20 +74,43 @@ export default function Home() {
     return (
         <div className="page">
             <div className="content">
-                <header className="navbar">
-                    <a href="#top" className="navbar-logo">
+                <header className="sticky top-4 z-50 mx-auto mb-8 flex w-full items-center justify-between gap-4 rounded-3xl border border-slate-200/80 bg-white/85 px-5 py-3 shadow-lg shadow-slate-200/70 backdrop-blur-md max-md:flex-col max-md:items-stretch">
+                    <a href="#top" className="flex items-center justify-center">
                         <img
                             src="/dealhay24h-banner.png"
                             alt="DealHay24h"
-                            className="navbar-banner"
+                            className="h-auto w-[190px] max-w-full"
                         />
                     </a>
 
-                    <nav className="navbar-menu">
-                        <a href="#san-pham">Sản phẩm</a>
-                        <a href="#gioi-thieu">Giới thiệu</a>
-                        <a href="#lien-he">Liên hệ</a>
-                        <a href="#san-pham" className="nav-cta">Xem deal hot</a>
+                    <nav className="flex flex-wrap items-center justify-center gap-3 text-sm font-bold text-slate-600 max-md:grid max-md:w-full max-md:grid-cols-2">
+                        <a
+                            href="#san-pham"
+                            className="rounded-full px-3 py-2 text-center transition hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Sản phẩm
+                        </a>
+
+                        <a
+                            href="#gioi-thieu"
+                            className="rounded-full px-3 py-2 text-center transition hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Giới thiệu
+                        </a>
+
+                        <a
+                            href="#lien-he"
+                            className="rounded-full px-3 py-2 text-center transition hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Liên hệ
+                        </a>
+
+                        <a
+                            href="#san-pham"
+                            className="rounded-full bg-indigo-600 px-4 py-2 text-center text-sm font-bold text-white shadow-md shadow-indigo-200 transition hover:bg-indigo-700"
+                        >
+                            Xem deal hot
+                        </a>
                     </nav>
                 </header>
                 <section className="link-converter-section">
@@ -205,23 +228,6 @@ export default function Home() {
                             Ưu tiên giao diện gọn gàng, ít rối mắt và tối ưu cho cả máy tính
                             lẫn điện thoại.
                         </p>
-                    </div>
-                </section>
-
-                <section className="trust-strip">
-                    <div className="trust-box">
-                        <strong>Cập nhật deal mỗi ngày</strong>
-                        <span>Theo dõi các sản phẩm nổi bật và ưu đãi mới</span>
-                    </div>
-
-                    <div className="trust-box">
-                        <strong>Chọn lọc sản phẩm đáng chú ý</strong>
-                        <span>Tập trung vào các món đồ dễ mua và dễ quan tâm</span>
-                    </div>
-
-                    <div className="trust-box">
-                        <strong>Truy cập nhanh, không rườm rà</strong>
-                        <span>Giảm thời gian tìm kiếm, đi thẳng tới sản phẩm</span>
                     </div>
                 </section>
                 <section className="category-section">
