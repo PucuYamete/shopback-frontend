@@ -179,46 +179,66 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="hero" id="top">
-                    <div className="hero-badge">
+                <section id="top" className="px-2 py-10 text-center max-sm:py-6 max-sm:text-left">
+                    <div className="mb-4 inline-flex rounded-full bg-indigo-50 px-4 py-2 text-sm font-bold text-indigo-700 max-sm:text-xs">
                         🔥 Deal hot cập nhật mỗi ngày
                     </div>
 
-                    <h1>
-                        Săn deal Shopee giá tốt <br />
-                        nhanh hơn cùng DealHay24h
+                    <h1 className="mx-auto mb-4 max-w-4xl text-5xl font-black leading-tight tracking-tight text-slate-900 max-md:text-4xl max-sm:text-3xl">
+                        Săn deal Shopee giá tốt{" "}
+                        <span className="block max-sm:inline">
+                            nhanh hơn cùng DealHay24h
+                        </span>
                     </h1>
 
-                    <p className="hero-text">
+                    <p className="mx-auto max-w-3xl text-[17px] leading-8 text-slate-500 max-sm:text-[15px] max-sm:leading-7">
                         Tổng hợp sản phẩm nổi bật, deal đáng chú ý và xu hướng mua sắm
                         từ Shopee giúp bạn tiết kiệm thời gian tìm kiếm và tiếp cận nhanh
                         các ưu đãi hấp dẫn mỗi ngày.
                     </p>
 
-                    <div className="hero-actions">
-                        <a href="#san-pham" className="primary-btn">
+                    <div className="mt-7 flex flex-wrap justify-center gap-3 max-sm:flex-col">
+                        <a
+                            href="#san-pham"
+                            className="inline-flex min-w-40 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-600 to-indigo-500 px-5 py-3 font-bold text-white shadow-lg shadow-indigo-200 transition hover:opacity-95"
+                        >
                             Xem deal hôm nay
                         </a>
 
-                        <a href="#gioi-thieu" className="secondary-btn">
+                        <a
+                            href="#gioi-thieu"
+                            className="inline-flex min-w-40 items-center justify-center rounded-xl border border-blue-100 bg-white px-5 py-3 font-bold text-slate-700 transition hover:bg-slate-50"
+                        >
                             Giới thiệu website
                         </a>
                     </div>
 
-                    <div className="hero-stats">
-                        <div className="hero-stat">
-                            <strong>Deal nổi bật</strong>
-                            <span>Cập nhật thường xuyên</span>
+                    <div className="mt-10 grid grid-cols-3 gap-4 max-md:grid-cols-1">
+                        <div className="rounded-2xl border border-slate-200 bg-white/75 p-5 shadow-lg shadow-slate-200/60 backdrop-blur-md">
+                            <strong className="mb-2 block text-base text-slate-900">
+                                Deal nổi bật
+                            </strong>
+                            <span className="text-sm leading-6 text-slate-500">
+                                Cập nhật thường xuyên
+                            </span>
                         </div>
 
-                        <div className="hero-stat">
-                            <strong>Sản phẩm đa dạng</strong>
-                            <span>Decor • Công nghệ • Gia dụng</span>
+                        <div className="rounded-2xl border border-slate-200 bg-white/75 p-5 shadow-lg shadow-slate-200/60 backdrop-blur-md">
+                            <strong className="mb-2 block text-base text-slate-900">
+                                Sản phẩm đa dạng
+                            </strong>
+                            <span className="text-sm leading-6 text-slate-500">
+                                Decor • Công nghệ • Gia dụng
+                            </span>
                         </div>
 
-                        <div className="hero-stat">
-                            <strong>Truy cập nhanh</strong>
-                            <span>Đi thẳng tới Shopee</span>
+                        <div className="rounded-2xl border border-slate-200 bg-white/75 p-5 shadow-lg shadow-slate-200/60 backdrop-blur-md">
+                            <strong className="mb-2 block text-base text-slate-900">
+                                Truy cập nhanh
+                            </strong>
+                            <span className="text-sm leading-6 text-slate-500">
+                                Đi thẳng tới Shopee
+                            </span>
                         </div>
                     </div>
                 </section>
